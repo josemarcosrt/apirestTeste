@@ -22,12 +22,11 @@ import com.maisvida.apirest.models.State;
 import com.maisvida.apirest.models.Person;
 import com.maisvida.apirest.models.Document;
 import com.maisvida.apirest.models.Photo;
-
-
 import com.maisvida.apirest.repository.StateRepository;
 import com.maisvida.apirest.repository.PersonRepository;
 import com.maisvida.apirest.repository.DocumentRepository;
 import com.maisvida.apirest.repository.PhotoRepository;
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -104,6 +103,12 @@ public class MaisVidaResource {
 		return photoRepository.findAll();
 	}
 	
+	@ApiOperation(value="Retorna um photo unica")
+	@GetMapping("/photo/{id}")
+	public Photo listaPhotoUnica(@PathVariable(value="id") long id){
+		return photoRepository.findById(id);
+	}
+	
 	@ApiOperation(value="Salva um photo")
 	@PostMapping("/savePhoto")
 	public Photo salvaPhoto(@RequestBody @Valid Photo photo) {
@@ -115,6 +120,7 @@ public class MaisVidaResource {
 	public Photo atualizaPhoto(@RequestBody @Valid Photo photo) {
 		return photoRepository.save(photo);
 	}
+	//@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
 	
 	@ApiOperation(value="Deleta um photo")
 	@DeleteMapping("/deletePhoto")
