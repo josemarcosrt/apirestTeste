@@ -29,8 +29,6 @@ public class Photo implements Serializable {
 	@NotNull
 	private String log;
 
-	
-	
 	public long getId() {
 		return id;
 	}
