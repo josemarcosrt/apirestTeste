@@ -110,5 +110,16 @@ public class MaisVidaResource {
 		return photoRepository.save(photo);
 	}
 	
+	@ApiOperation(value="Atualiza um photo")
+	@PutMapping("/photo")
+	public Photo atualizaPhoto(@RequestBody @Valid Photo photo) {
+		return photoRepository.save(photo);
+	}
+	
+	@ApiOperation(value="Deleta um photo")
+	@DeleteMapping("/pessoa")
+	public void deletaPhoto(@RequestBody @Valid Photo photo) {
+		photoRepository.delete(photo);
+	}
 
 }
