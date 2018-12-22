@@ -42,11 +42,18 @@
 		</dependency>
 		
 		
-		<!-- MySQL Server Libraries -->
+		<!-- MySQL Server Libraries
 		 <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.36</version>
+		</dependency>  -->
+		
+		<!-- MySQL Server Libraries -->
+		<dependency>
+		  <groupId>org.postgresql</groupId>
+		  <artifactId>postgresql</artifactId>
+		  <version>42.2.2</version>
 		</dependency>
 		
 		<!--  
